@@ -1,0 +1,27 @@
+.navbar.navbar-default {
+  background-color: #3b5998;
+  color: white; }
+
+.col-sm-4 h2 {
+  color: #3b5998; }
+
+.col-sm-8 h2 {
+  color: #3b5998; }
+
+.col-sm-4 {
+  border-right: solid 1px black; }
+
+.navbar-brand.logo {
+  color: white; }
+
+.friendinfo {
+  float: right;
+  padding-right: 25%; }
+
+.row h2 {
+  margin-left: 25px;
+  color: #3b5998; }
+
+.row h2 {
+  margin-left: 25px;
+  color: #3b5998; }
