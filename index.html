@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="sass/main.css" media="screen" title="no title" charset="utf-8">
-
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="main.js" charset="utf-8"></script>
     <title>friendly</title>
 </head>
 
@@ -25,29 +25,24 @@
         </div>
     </nav>
 
-    <div class="row">
-        <div class="col-sm-4 friendlist">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/2000px-Smiley.svg.png" class="img-thumbnail" alt="Cinque Terre" width="75" height="236">
-            <div class="friendinfo">
-                <h3>Gabe</h3>
-                <h5>friends since June 2016</h5>
-            </div>
-        </div>
-        <div class="col-sm-8 friendfeed">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/2000px-Smiley.svg.png" class="img-thumbnail" alt="Cinque Terre" width="75" height="236">
-            <div class="friendinfo">
-                <p>Hi, I'm <span class="name details">TBD</span>! I like
-                    <span class="interest details">going to the beach</span>,
-                    <span class="interest details">playing with dogs</span>, and
-                    <span class="interest details">horses</span>.
-                </p>
-            </div>
-          <button type="button" name="Add">ADD</button>
-        </div>
+    <!-- begin code for two friend list columns -->
+    <div class="right">
+
+        <!-- accepted friends list       -->
+        <section id="friendfeed">
+
+        </section>
     </div>
+    <!-- feed of potential friends       -->
+    <div class="left">
+        <section id="addedfriends">
+          <h2>HI</h2>
+        </section>
+    </div>
+
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/underscore/underscore.js" charset="utf-8"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+    <!-- <script src="js/main.js" charset="utf-8"></script> -->
 </body>
 
 </html>

@@ -1,0 +1,39 @@
+.navbar.navbar-default {
+  background-color: #3b5998;
+  color: white; }
+
+.navbar-brand.logo {
+  color: white; }
+
+.row h2 {
+  margin-left: 25px;
+  color: #3b5998; }
+
+.row h2 {
+  margin-left: 25px;
+  color: #3b5998; }
+
+.right {
+  float: right;
+  width: 70%; }
+
+.left {
+  float: left;
+  width: 30%;
+  background-color: yellow; }
+
+.right {
+  float: right;
+  width: 70%;
+  overflow: hidden; }
+
+.row {
+  margin-left: 80px;
+  margin-bottom: 15px; }
+  .row p {
+    float: right;
+    margin-right: 73%;
+    margin-top: 24px; }
+
+#friendfeed {
+  color: #3b5998; }

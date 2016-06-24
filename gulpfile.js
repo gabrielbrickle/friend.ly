@@ -1,8 +1,8 @@
 var gulp = require('gulp');////done
 var sass = require('gulp-sass');///done
 var htmlmin = require('gulp-htmlmin');///done
-var babel = require('gulp-babel');///done
-var concat = require('gulp-concat');///done
+// var babel = require('gulp-babel');///done
+// var concat = require('gulp-concat');///done
 var browserify = require('gulp-browserify');//done
 watch = require('gulp-watch');///done
 
@@ -28,9 +28,9 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     gulp.src('./js/*.js')
-        .pipe(babel({ /
-             presets: ['es2015']
-             }))
+        // .pipe(babel({ /
+        //      presets: ['es2015']
+        //      }))
         .pipe(browserify())
         .pipe(gulp.dest('./public'));
 });
