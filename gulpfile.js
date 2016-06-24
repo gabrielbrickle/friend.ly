@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var sass = require('gulp-sass');
-var htmlmin = require('gulp-htmlmin');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
+var gulp = require('gulp');////done
+var sass = require('gulp-sass');///done
+var htmlmin = require('gulp-htmlmin');///done
+var babel = require('gulp-babel');///done
+var concat = require('gulp-concat');///done
+var browserify = require('gulp-browserify');//done
+watch = require('gulp-watch');///done
 
 gulp.task('default', ['html', 'css', 'js']);
 
@@ -31,6 +32,5 @@ gulp.task('js', function () {
              presets: ['es2015']
              }))
         .pipe(browserify())
-        .pipe(uglify())
         .pipe(gulp.dest('./public'));
 });
