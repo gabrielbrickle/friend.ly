@@ -5,7 +5,7 @@ function randomUser (user) {
     <div class="col-sm-4 friendlist">
         <img src="${user.picture.medium}" class="img-thumbnail" width="75" height="236">
         <div class="friendinfo">
-            <h3>${user.name.first}</h3>
+            <a href=<h3>${user.name.first}</h3></a>
             <h5>friends since June</h5>
         </div>
     </div>
@@ -47,18 +47,22 @@ getAFriend: function () {
           <p>Hi I'm ${friendObject.name.first}.</p>
           <button type="button" name="Add">ADD</button>
       `;
-      child.classList.add('row')
       //add button under friend feed
-
         let add = child.querySelector('button');
         add.addEventListener('click', function() {
             console.log(`clicked ${friendObject.name.first}`);
-            randomUser(friendObject);
+        ////this appends the user to the left side and hides them on the right side
+        randomUser(friendObject);
+        child.style.visibility = "hidden";
+
         });
+        /////appending friendfeed to the dom
+
         let parent = document.getElementById('friendfeed');
             parent.appendChild(child);
+
     });
     request.open('GET', 'https://randomuser.me/api/');
     request.send();
-}
+  }
 }

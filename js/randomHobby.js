@@ -1,6 +1,6 @@
-// module.exports = {
-//
-// var hobby = ['running', 'fishing', 'swimming', 'boating', 'exercising', 'shopping', 'eating', 'wine', 'golfing', 'sailing', 'basketball', 'watching tv', 'football', 'baseball', 'reading', 'coding', 'computers', 'horseback riding', 'time with friends'];
+module.exports = {
+// 
+// var hobby = ['running', 'fishing', 'swimming', 'boating', 'exercising', 'shopping', 'eating'];
 //
 // randomHob: function(anyListOfHobbies) {
 //     var randomNum = Math.random(); //number between 0 and 1
@@ -11,10 +11,10 @@
 // }
 //
 // randomHob(hobby);
-// //
-// // ////hobbies button on nav bar
-// // let hobbies = document.querySelector('.hobbiesbutton');
-// // hobbies.addEventListener('click', function() {
-// //     console.log('hobbies button');
-// // });
-// }
+//
+// ////hobbies button on nav bar
+// let hobbies = document.querySelector('.hobbiesbutton');
+// hobbies.addEventListener('click', function() {
+//     console.log('hobbies button');
+// });
+}

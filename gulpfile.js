@@ -2,7 +2,6 @@ var gulp = require('gulp');////done
 var sass = require('gulp-sass');///done
 var htmlmin = require('gulp-htmlmin');///done
 // var babel = require('gulp-babel');///done
-// var concat = require('gulp-concat');///done
 var browserify = require('gulp-browserify');//done
 watch = require('gulp-watch');///done
 

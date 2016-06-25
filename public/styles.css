@@ -20,12 +20,11 @@
 .left {
   float: left;
   width: 30%;
-  background-color: yellow; }
+  background-color: #D3D3D3; }
 
 .right {
   float: right;
-  width: 70%;
-  overflow: hidden; }
+  width: 70%; }
 
 .row {
   margin-left: 80px;
