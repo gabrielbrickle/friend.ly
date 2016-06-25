@@ -1,4 +1,3 @@
-
 function randomUser (user) {
     let friend = document.getElementById('addedfriends');
     let child = document.createElement('div');
