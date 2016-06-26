@@ -6,7 +6,20 @@ var randomHobby = require('./randomHobby.js')
 window.addEventListener('load', function() {
         console.log('loaded page successfully');
         setInterval(friendFeed.getAFriend, 2000);
+
+        ////hobbies button on nav bar
+      let hobby = document.getElementsByClassName("hobbiesbutton");
+      hobby[0].addEventListener('click', function() {
+        console.log('clicked!');
+        console.log(randomHobby.randomHob());
+        document.getElementById('friendfeed').style.visibility="hidden";
+        document.getElementById('hobbyfeed').className.replace('hobbyfeed');
+      });
+
 });
+
+
+
 
 
 
@@ -18,11 +31,6 @@ window.addEventListener('load', function() {
 //             console.log('add button clicked');
 //           });
 //
-// ////hobbies button on nav bar
-// let hobbies = document.querySelector('.hobbiesbutton');
-// hobbies.addEventListener('click', function() {
-//     console.log('hobbies button');
-// });
 //
 // ////details button on nav bar
 // let details = document.querySelector('.detailsbutton');
@@ -46,53 +54,54 @@ function randomUser (user) {
 
     friend.appendChild(child);
 }
+let friendsArray= [];
+let actualFriends= [];
+var randomHobby = require('./randomHobby.js');
 
 module.exports = {
-// randomUser: function (user) {
-//     let friend = document.getElementById('friendfeed');
-//     let child = document.createElement('div');
-//     child.innerHTML = `
-//     <div class="col-sm-4 friendlist">
-//         <img src="${user.picture.medium}" class="img-thumbnail" width="75" height="236">
-//         <div class="friendinfo">
-//             <h3>${user.name.first}</h3>
-//             <h5>friends since June</h5>
-//         </div>
-//     </div>
-//     `;
-//     friend.appendChild(child);
-// },
+
 
 getAFriend: function () {
     var request = new XMLHttpRequest();
     request.addEventListener('load', function() {
         var friendObject = JSON.parse(this.responseText);
         friendObject = friendObject.results[0];
-        console.log(friendObject);
-
-        var sayHi = 'Hi';
-        if (friendObject.gender === 'female') {
-            sayHi = 'Hi mam';
-        }
+        console.log("yay friend");
+        if (friendsArray.length < 5){
         let child = document.createElement('div');
         child.innerHTML = `
           <img src='${friendObject.picture.medium}' />
           <p>Hi I'm ${friendObject.name.first}.</p>
           <button type="button" name="Add">ADD</button>
       `;
-      //add button under friend feed
-        let add = child.querySelector('button');
-        add.addEventListener('click', function() {
-            console.log(`clicked ${friendObject.name.first}`);
-        ////this appends the user to the left side and hides them on the right side
-        randomUser(friendObject);
-        child.style.visibility = "hidden";
-
-        });
-        /////appending friendfeed to the dom
 
         let parent = document.getElementById('friendfeed');
+
+        //add button under friend feed
+          let add = child.querySelector('button');
+          add.addEventListener('click', function() {
+              console.log(`clicked ${friendObject.name.first}`);
+          ////this appends the user to the left side and hides them on the right side
+          randomUser(friendObject);
+          child.remove();
+          friendsArray = friendsArray.filter(function(element){
+            if (friendObject.name.first === element.name.first){
+              return false;
+            } else {
+              return true;
+            }
+          })
+        actualFriends.push(friendObject);
+        friendObject.hobbies= [randomHobby.randomHob(), randomHobby.randomHob(), randomHobby.randomHob()];
+        console.log(friendObject.hobbies);
+          });
+
             parent.appendChild(child);
+            friendsArray.push(friendObject);///supposed to push 5 into friendsArray then stop
+            console.log(friendsArray);
+          } else {
+            console.log("we can't be friends");
+          }
 
     });
     request.open('GET', 'https://randomuser.me/api/');
@@ -100,26 +109,20 @@ getAFriend: function () {
   }
 }
 
-},{}],3:[function(require,module,exports){
+},{"./randomHobby.js":3}],3:[function(require,module,exports){
+var hobby = ['running', 'fishing', 'swimming', 'boating', 'exercising', 'shopping', 'eating'];
+
 module.exports = {
-// 
-// var hobby = ['running', 'fishing', 'swimming', 'boating', 'exercising', 'shopping', 'eating'];
-//
-// randomHob: function(anyListOfHobbies) {
-//     var randomNum = Math.random(); //number between 0 and 1
-//     var lengthOfHobbyList = anyListOfHobbies.length; //need to know how many students there are in the array
-//     var lastIndexOfHobbies = lengthOfHobbyList - 1; //determines last index of the array
-//     var guessHobby = Math.floor(randomNum * lengthOfHobbyList); //math floor rounds the number down. number between 0 and 9
-//     return anyListOfHobbies[guessHobby];
-// }
-//
-// randomHob(hobby);
-//
-// ////hobbies button on nav bar
-// let hobbies = document.querySelector('.hobbiesbutton');
-// hobbies.addEventListener('click', function() {
-//     console.log('hobbies button');
-// });
+
+randomHob: function() {
+    var randomNum = Math.random(); //number between 0 and 1
+    var lengthOfHobbyList = hobby.length; //need to know how many students there are in the array
+    var lastIndexOfHobbies = lengthOfHobbyList - 1; //determines last index of the array
+    var guessHobby = Math.floor(randomNum * lengthOfHobbyList); //math floor rounds the number down. number between 0 and 9
+    return hobby[guessHobby];
+},
+
+
 }
 
 },{}]},{},[1])

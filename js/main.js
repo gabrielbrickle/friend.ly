@@ -5,7 +5,20 @@ var randomHobby = require('./randomHobby.js')
 window.addEventListener('load', function() {
         console.log('loaded page successfully');
         setInterval(friendFeed.getAFriend, 2000);
+
+        ////hobbies button on nav bar
+      let hobby = document.getElementsByClassName("hobbiesbutton");
+      hobby[0].addEventListener('click', function() {
+        console.log('clicked!');
+        console.log(randomHobby.randomHob());
+        document.getElementById('friendfeed').style.visibility="hidden";
+        document.getElementById('hobbyfeed').className.replace('hobbyfeed');
+      });
+
 });
+
+
+
 
 
 
@@ -17,11 +30,6 @@ window.addEventListener('load', function() {
 //             console.log('add button clicked');
 //           });
 //
-// ////hobbies button on nav bar
-// let hobbies = document.querySelector('.hobbiesbutton');
-// hobbies.addEventListener('click', function() {
-//     console.log('hobbies button');
-// });
 //
 // ////details button on nav bar
 // let details = document.querySelector('.detailsbutton');
